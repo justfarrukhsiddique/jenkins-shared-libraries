@@ -7,7 +7,7 @@ def call(Map config = [:]) {
     def imageTag = config.imageTag ?: error("Image tag is required")
     def manifestsPath = config.manifestsPath ?: 'kubernetes'
     def gitCredentials = config.gitCredentials ?: 'github-credentials'
-    def gitUserName = config.gitUserName ?: 'Jenkins CI'
+    def gitUserName = config.gitUserName ?: 'justfarrukhsiddique'
     def gitUserEmail = config.gitUserEmail ?: 'jenkins@example.com'
     
     echo "Updating Kubernetes manifests with image tag: ${imageTag}"
@@ -47,7 +47,7 @@ def call(Map config = [:]) {
                 git commit -m "Update image tags to ${imageTag} and ensure correct domain [ci skip]"
                 
                 # Set up credentials for push
-                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/lax66/tws-e-commerce-app_hackathon.git
+                git remote set-url origin https://\${GIT_USERNAME}:\${GIT_PASSWORD}@github.com/justfarrukhsiddique/myeksfulstackapp
                 git push origin HEAD:\${GIT_BRANCH}
             fi
         """
